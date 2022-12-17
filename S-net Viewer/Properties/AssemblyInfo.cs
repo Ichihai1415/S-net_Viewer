@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // 制御されます。アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更します。
 [assembly: AssemblyTitle("S-net Viewer")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("S-netを表示します。")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Ichihai1415")]
 [assembly: AssemblyProduct("S-net Viewer")]
-[assembly: AssemblyCopyright("Copyright ©  2022")]
+[assembly: AssemblyCopyright("Copyright ©  2022 Ichihai1415")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
