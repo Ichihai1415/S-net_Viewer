@@ -4,7 +4,7 @@
 
 サイズの変更、背景色の変更、URLの変更などもできます。
 
-App.configは既定設定、setting.xmlはユーザー設定ファイルです(AppDataに保存されるものと同じ)。
+S-net Viewer.exe.configは既定設定+α、setting.xmlはユーザー設定ファイルです(AppDataに保存されるものと同じ)。
 
 Log\ErrorLogにエラーログが保存されます。
 
