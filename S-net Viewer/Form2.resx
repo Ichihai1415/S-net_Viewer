@@ -141,4 +141,7 @@ URL    海しる:
   <data name="URLbox.Text" xml:space="preserve">
     <value>https://www.msil.go.jp/arcgis/rest/services/Msil/DisasterPrevImg1/ImageServer//exportImage?f=image&amp;renderingRule={%22rasterFunction%22:%22DisasterPrevImg1%22}&amp;time={Time},{Time}&amp;bbox=15900000,3900000,15900000,5500000&amp;imageSR=102100&amp;bboxSR=102100&amp;size={Size}</value>
   </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

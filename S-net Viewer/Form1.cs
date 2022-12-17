@@ -38,6 +38,8 @@ namespace S_net_Viewer
             {
                 DateTime NowTime = DateTime.Now.ToUniversalTime();
                 DateTime DataTime = NowTime - TimeSpan.FromSeconds(DateTime.Now.Second);
+                if (DateTime.Now.Second< Settings.Default.GetDelay-3)//遅延秒より秒が短い
+                    DataTime -= TimeSpan.FromMinutes(1);
                 DateTime UnixTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
                 long Time = (long)DataTime.Subtract(UnixTime).TotalMilliseconds;
                 string KyoshinURL = Settings.Default.URL.Replace("{Time}", $"{Time}").Replace("{Size}", $"{Settings.Default.MainSize.Width},{Settings.Default.MainSize.Height}");
