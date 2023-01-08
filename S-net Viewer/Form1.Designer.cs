@@ -34,15 +34,18 @@
             this.Time = new System.Windows.Forms.Label();
             this.RC = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.RC_setting = new System.Windows.Forms.ToolStripMenuItem();
-            this.RC_reboot = new System.Windows.Forms.ToolStripMenuItem();
+            this.RC_SaveSize = new System.Windows.Forms.ToolStripMenuItem();
             this.RC_Sites = new System.Windows.Forms.ToolStripMenuItem();
             this.RC_UmisiruMap = new System.Windows.Forms.ToolStripMenuItem();
             this.RCbar = new System.Windows.Forms.ToolStripSeparator();
             this.RC_Twitter = new System.Windows.Forms.ToolStripMenuItem();
             this.RC_GitHub = new System.Windows.Forms.ToolStripMenuItem();
-            this.RC_SaveSize = new System.Windows.Forms.ToolStripMenuItem();
+            this.RC_reboot = new System.Windows.Forms.ToolStripMenuItem();
+            this.SnetImgColor = new System.Windows.Forms.PictureBox();
+            this.ImgChange = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.SnetImg)).BeginInit();
             this.RC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SnetImgColor)).BeginInit();
             this.SuspendLayout();
             // 
             // SnetImg
@@ -66,9 +69,9 @@
             this.Time.AutoSize = true;
             this.Time.Location = new System.Drawing.Point(0, 0);
             this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(127, 12);
+            this.Time.Size = new System.Drawing.Size(127, 24);
             this.Time.TabIndex = 1;
-            this.Time.Text = "---- / -- / --  -- : -- ";
+            this.Time.Text = "---- / -- / --  -- : -- \r\n取得遅延 - - s";
             // 
             // RC
             // 
@@ -87,12 +90,12 @@
             this.RC_setting.Text = "設定";
             this.RC_setting.Click += new System.EventHandler(this.RC_setting_Click);
             // 
-            // RC_reboot
+            // RC_SaveSize
             // 
-            this.RC_reboot.Name = "RC_reboot";
-            this.RC_reboot.Size = new System.Drawing.Size(188, 22);
-            this.RC_reboot.Text = "再起動";
-            this.RC_reboot.Click += new System.EventHandler(this.RC_reboot_Click);
+            this.RC_SaveSize.Name = "RC_SaveSize";
+            this.RC_SaveSize.Size = new System.Drawing.Size(188, 22);
+            this.RC_SaveSize.Text = "現在のサイズを設定する";
+            this.RC_SaveSize.Click += new System.EventHandler(this.RC_SaveSize_Click);
             // 
             // RC_Sites
             // 
@@ -108,35 +111,51 @@
             // RC_UmisiruMap
             // 
             this.RC_UmisiruMap.Name = "RC_UmisiruMap";
-            this.RC_UmisiruMap.Size = new System.Drawing.Size(180, 22);
+            this.RC_UmisiruMap.Size = new System.Drawing.Size(157, 22);
             this.RC_UmisiruMap.Text = "海しるマップ";
             this.RC_UmisiruMap.Click += new System.EventHandler(this.RC_UmisiruMap_Click);
             // 
             // RCbar
             // 
             this.RCbar.Name = "RCbar";
-            this.RCbar.Size = new System.Drawing.Size(177, 6);
+            this.RCbar.Size = new System.Drawing.Size(154, 6);
             // 
             // RC_Twitter
             // 
             this.RC_Twitter.Name = "RC_Twitter";
-            this.RC_Twitter.Size = new System.Drawing.Size(180, 22);
+            this.RC_Twitter.Size = new System.Drawing.Size(157, 22);
             this.RC_Twitter.Text = "製作者Twitter";
             this.RC_Twitter.Click += new System.EventHandler(this.RC_Twitter_Click);
             // 
             // RC_GitHub
             // 
             this.RC_GitHub.Name = "RC_GitHub";
-            this.RC_GitHub.Size = new System.Drawing.Size(180, 22);
+            this.RC_GitHub.Size = new System.Drawing.Size(157, 22);
             this.RC_GitHub.Text = "GitHubレポジトリ";
             this.RC_GitHub.Click += new System.EventHandler(this.RC_GitHub_Click);
             // 
-            // RC_SaveSize
+            // RC_reboot
             // 
-            this.RC_SaveSize.Name = "RC_SaveSize";
-            this.RC_SaveSize.Size = new System.Drawing.Size(188, 22);
-            this.RC_SaveSize.Text = "現在のサイズを設定する";
-            this.RC_SaveSize.Click += new System.EventHandler(this.RC_SaveSize_Click);
+            this.RC_reboot.Name = "RC_reboot";
+            this.RC_reboot.Size = new System.Drawing.Size(188, 22);
+            this.RC_reboot.Text = "再起動";
+            this.RC_reboot.Click += new System.EventHandler(this.RC_reboot_Click);
+            // 
+            // SnetImgColor
+            // 
+            this.SnetImgColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(90)))));
+            this.SnetImgColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SnetImgColor.Location = new System.Drawing.Point(0, 0);
+            this.SnetImgColor.Name = "SnetImgColor";
+            this.SnetImgColor.Size = new System.Drawing.Size(0, 0);
+            this.SnetImgColor.TabIndex = 2;
+            this.SnetImgColor.TabStop = false;
+            // 
+            // ImgChange
+            // 
+            this.ImgChange.Enabled = true;
+            this.ImgChange.Interval = 10000;
+            this.ImgChange.Tick += new System.EventHandler(this.ImgChange_Tick);
             // 
             // Display
             // 
@@ -146,6 +165,7 @@
             this.ClientSize = new System.Drawing.Size(200, 400);
             this.ContextMenuStrip = this.RC;
             this.Controls.Add(this.Time);
+            this.Controls.Add(this.SnetImgColor);
             this.Controls.Add(this.SnetImg);
             this.ForeColor = System.Drawing.Color.White;
             this.KeyPreview = true;
@@ -156,6 +176,7 @@
             this.Resize += new System.EventHandler(this.Display_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.SnetImg)).EndInit();
             this.RC.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SnetImgColor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +196,8 @@
         private System.Windows.Forms.ToolStripMenuItem RC_Twitter;
         private System.Windows.Forms.ToolStripMenuItem RC_GitHub;
         private System.Windows.Forms.ToolStripMenuItem RC_SaveSize;
+        private System.Windows.Forms.PictureBox SnetImgColor;
+        private System.Windows.Forms.Timer ImgChange;
     }
 }
 

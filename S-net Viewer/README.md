@@ -1,8 +1,8 @@
-﻿# S-net Viewer  Version:1.0.0(2022/12/17)
+﻿# S-net Viewer  Version:1.1.0(2023/01/08)
 
 [海しる](https://www.msil.go.jp/msil/htm/main.html?Lang=0)の強震動情報から取得して表示します。
 
-サイズの変更、背景色の変更、URLの変更などもできます。
+サイズの変更、背景色の変更、URLの変更、震度別色などもできます。
 
 S-net Viewer.exe.configは既定設定+α、setting.xmlはユーザー設定ファイルです(AppDataに保存されるものと同じ)。
 
@@ -16,5 +16,12 @@ Log\ErrorLogにエラーログが保存されます。
 
 # 更新履歴
 
+## v1.1.0
+2022/01/08
+
+震度別色置換を仮実装
+
 ## v1.0.0 
+2022/12/17
+
 初リリース。
