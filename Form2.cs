@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace S_net_Viewer
 {
-    public partial class SetttingForm : Form
+    public partial class SettingForm : Form
     {
-        public SetttingForm()
+        public SettingForm()
         {
             InitializeComponent();
         }
@@ -30,6 +30,8 @@ namespace S_net_Viewer
                 DisplayTime.Checked = false;
             Color_Back.BackColor = Settings.Default.BackColor;
             Color_Fore.BackColor = Settings.Default.ForeColor;
+            ReplaceColor.Checked = Settings.Default.ReplaceColor;
+            ReplaceColors.Text = Settings.Default.ReplaceColors;
             URLbox.Text = Settings.Default.URL;
         }
 
@@ -47,6 +49,8 @@ namespace S_net_Viewer
                 Settings.Default.ViewTime = false;
             Settings.Default.BackColor = Color_Back.BackColor;
             Settings.Default.ForeColor = Color_Fore.BackColor;
+            Settings.Default.ReplaceColor = ReplaceColor.Checked;
+            Settings.Default.ReplaceColors = ReplaceColors.Text;
             Settings.Default.URL = URLbox.Text;
             Settings.Default.Save();
             Configuration Config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
@@ -79,7 +83,7 @@ namespace S_net_Viewer
             if (Result == DialogResult.Yes)
             {
                 Settings.Default.Reset();
-                SetttingForm Setting = new SetttingForm();
+                SettingForm Setting = new SettingForm();
                 Configuration Config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
                 if (File.Exists("setting.xml"))
                     File.Delete("setting.xml");

@@ -1,9 +1,12 @@
 ﻿using S_net_Viewer.Properties;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 
@@ -26,6 +29,7 @@ namespace S_net_Viewer
         private void Display_Load(object sender, EventArgs e)
         {
             Timer.Interval = 1000 * (60 * (3 - (DateTime.Now.Minute % 3)) - DateTime.Now.Second + Settings.Default.GetDelay);//3x分+遅延までのミリ秒
+            ImgChange.Interval = 5000 - (DateTime.Now.Millisecond & 5000);
             SettingReload();
             GetImg();
         }
@@ -38,17 +42,28 @@ namespace S_net_Viewer
             {
                 DateTime NowTime = DateTime.Now.ToUniversalTime();
                 DateTime DataTime = NowTime - TimeSpan.FromSeconds(DateTime.Now.Second);
-                if (DateTime.Now.Second< Settings.Default.GetDelay-3)//遅延秒より秒が短い
+                if (DateTime.Now.Second < Settings.Default.GetDelay - 3)//遅延秒より秒が短い
                     DataTime -= TimeSpan.FromMinutes(1);
                 DateTime UnixTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
                 long Time = (long)DataTime.Subtract(UnixTime).TotalMilliseconds;
                 string KyoshinURL = Settings.Default.URL.Replace("{Time}", $"{Time}").Replace("{Size}", $"{Settings.Default.MainSize.Width},{Settings.Default.MainSize.Height}");
                 WebClient wc = new WebClient();
                 Stream Kyoshin1 = wc.OpenRead(KyoshinURL);
-                Bitmap Kyoshin2 = new Bitmap(Kyoshin1);
-                SnetImg.BackgroundImage = Kyoshin2;
+                Bitmap NormalImg = new Bitmap(Kyoshin1);
+                SnetImg.BackgroundImage = NormalImg;
+                if (Settings.Default.ReplaceColor)
+                {
+                    Bitmap ChangeImg = new Bitmap(NormalImg.Width, NormalImg.Height);
+                    Graphics graphics = Graphics.FromImage(ChangeImg);
+                    ImageAttributes ImageAttributes = new ImageAttributes();
+                    ImageAttributes.SetRemapTable(ChangeColors);
+                    graphics.DrawImage(NormalImg, new Rectangle(0, 0, NormalImg.Width, NormalImg.Height), 0, 0, NormalImg.Width, NormalImg.Height, GraphicsUnit.Pixel, ImageAttributes);
+                    ChangeImg.MakeTransparent(Color.FromArgb(0,0,0));
+                    SnetImgColor.BackgroundImage = ChangeImg;
+                    graphics.Dispose();
+                }
                 if (Settings.Default.ViewTime)
-                    this.Time.Text = DataTime.ToLocalTime().ToString("yyyy/MM/dd HH:mm");
+                    this.Time.Text = $"{DataTime.ToLocalTime():yyyy/MM/dd HH:mm}\n取得遅延:{Settings.Default.GetDelay}s";
                 wc.Dispose();
                 Kyoshin1.Dispose();
             }
@@ -71,6 +86,7 @@ namespace S_net_Viewer
                     File.WriteAllText($"Log\\ErrorLog\\{DateTime.Now:yyyyMM}\\{DateTime.Now:yyyyMMdd}.txt", $"{DateTime.Now:HH:mm:ss} {ex}");
             }
         }
+        public ColorMap[] ChangeColors;
         /// <summary>
         /// 設定を読み込みます。
         /// </summary>
@@ -78,7 +94,10 @@ namespace S_net_Viewer
         {
             Configuration Config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
             if (File.Exists("setting.xml"))
+            {
+                Settings.Default.Save();
                 File.Copy("setting.xml", Config.FilePath, true);
+            }
             Settings.Default.Reload();
             if (Settings.Default.MaxSize)
                 WindowState = FormWindowState.Maximized;
@@ -90,15 +109,27 @@ namespace S_net_Viewer
             Time.BackColor = Settings.Default.BackColor;
             ForeColor = Settings.Default.ForeColor;
             Time.ForeColor = Settings.Default.ForeColor;
+            List<ColorMap> ColorChange = new List<ColorMap>();
+            string[] Colors_ = Settings.Default.ReplaceColors.Replace("\n","").Split('/');
+            for (int i = 0; i*2 < Colors_.Count(); i++)
+            {
+                string[] Colors1 = Colors_[i*2].Split(',');
+                string[] Colors2 = Colors_[i*2 + 1].Split(',');
+                ColorChange.Add(new ColorMap());
+                  ColorChange[i].OldColor = Color.FromArgb(Convert.ToInt16(Colors1[0]), Convert.ToInt16(Colors1[1]), Convert.ToInt16(Colors1[2]));
+                ColorChange[i].NewColor = Color.FromArgb(Convert.ToInt16(Colors2[0]), Convert.ToInt16(Colors2[1]), Convert.ToInt16(Colors2[2]));
+            }
+            ChangeColors = ColorChange.ToArray();
         }
         private void Display_Resize(object sender, EventArgs e)
         {
-            SnetImg.Size = new Size(Width - 16, Height - 39);
+            SnetImg.Size = ClientSize;
+            SnetImgColor.Size = ClientSize;
         }
 
         private void RC_setting_Click(object sender, EventArgs e)
         {
-            SetttingForm Setting = new SetttingForm();
+            SettingForm Setting = new SettingForm();
             Setting.FormClosed += Setting_FormClosing;//閉じたとき呼び出し
             Setting.Show();
         }
@@ -141,6 +172,15 @@ namespace S_net_Viewer
             Settings.Default.Save();
             Configuration Config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
             File.Copy(Config.FilePath, "setting.xml", true);
+        }
+
+        private void ImgChange_Tick(object sender, EventArgs e)
+        {
+            ImgChange.Interval = 5000;
+            if (DateTime.Now.Second % 10 < 5)//通常
+                SnetImgColor.Size = new Size(0, 0);
+            else if (Settings.Default.ReplaceColor)
+                SnetImgColor.Size = SnetImg.Size;
         }
     }
 }

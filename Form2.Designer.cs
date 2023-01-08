@@ -1,6 +1,6 @@
 ﻿namespace S_net_Viewer
 {
-    partial class SetttingForm
+    partial class SettingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetttingForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.Save = new System.Windows.Forms.Button();
             this.InfoText2 = new System.Windows.Forms.Label();
             this.InfoText = new System.Windows.Forms.Label();
@@ -45,6 +45,8 @@
             this.BackColorChange = new System.Windows.Forms.Button();
             this.ForeColorChange = new System.Windows.Forms.Button();
             this.Reset = new System.Windows.Forms.Button();
+            this.ReplaceColor = new System.Windows.Forms.CheckBox();
+            this.ReplaceColors = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DisplayWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DisplayHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delay)).BeginInit();
@@ -67,7 +69,7 @@
             this.InfoText2.Location = new System.Drawing.Point(134, 318);
             this.InfoText2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.InfoText2.Name = "InfoText2";
-            this.InfoText2.Size = new System.Drawing.Size(445, 34);
+            this.InfoText2.Size = new System.Drawing.Size(367, 28);
             this.InfoText2.TabIndex = 1;
             this.InfoText2.Text = "※このウィンドウを閉じると設定が再読み込みされます。\r\n　画像が表示されない場合再起動するかURLを確認してください。\r\n";
             // 
@@ -102,7 +104,7 @@
             0,
             0});
             this.DisplayWidth.Name = "DisplayWidth";
-            this.DisplayWidth.Size = new System.Drawing.Size(48, 24);
+            this.DisplayWidth.Size = new System.Drawing.Size(48, 21);
             this.DisplayWidth.TabIndex = 5;
             this.DisplayWidth.Value = new decimal(new int[] {
             200,
@@ -119,7 +121,7 @@
             0,
             0});
             this.DisplayHeight.Name = "DisplayHeight";
-            this.DisplayHeight.Size = new System.Drawing.Size(48, 24);
+            this.DisplayHeight.Size = new System.Drawing.Size(48, 21);
             this.DisplayHeight.TabIndex = 6;
             this.DisplayHeight.Value = new decimal(new int[] {
             400,
@@ -141,7 +143,7 @@
             this.UmiSiru.AutoSize = true;
             this.UmiSiru.Location = new System.Drawing.Point(106, 187);
             this.UmiSiru.Name = "UmiSiru";
-            this.UmiSiru.Size = new System.Drawing.Size(374, 17);
+            this.UmiSiru.Size = new System.Drawing.Size(303, 14);
             this.UmiSiru.TabIndex = 8;
             this.UmiSiru.TabStop = true;
             this.UmiSiru.Text = "https://www.msil.go.jp/msil/htm/main.html?Lang=0";
@@ -156,7 +158,7 @@
             0,
             0});
             this.Delay.Name = "Delay";
-            this.Delay.Size = new System.Drawing.Size(48, 24);
+            this.Delay.Size = new System.Drawing.Size(48, 21);
             this.Delay.TabIndex = 9;
             this.Delay.Value = new decimal(new int[] {
             30,
@@ -171,17 +173,17 @@
             this.DisplayTime.CheckState = System.Windows.Forms.CheckState.Checked;
             this.DisplayTime.Location = new System.Drawing.Point(23, 75);
             this.DisplayTime.Name = "DisplayTime";
-            this.DisplayTime.Size = new System.Drawing.Size(172, 21);
+            this.DisplayTime.Size = new System.Drawing.Size(207, 18);
             this.DisplayTime.TabIndex = 10;
-            this.DisplayTime.Text = "取得時刻を表示する";
+            this.DisplayTime.Text = "取得時刻・遅延秒数を表示する";
             this.DisplayTime.UseVisualStyleBackColor = true;
             // 
             // DisplayMax
             // 
             this.DisplayMax.AutoSize = true;
-            this.DisplayMax.Location = new System.Drawing.Point(235, 46);
+            this.DisplayMax.Location = new System.Drawing.Point(239, 35);
             this.DisplayMax.Name = "DisplayMax";
-            this.DisplayMax.Size = new System.Drawing.Size(81, 21);
+            this.DisplayMax.Size = new System.Drawing.Size(68, 18);
             this.DisplayMax.TabIndex = 11;
             this.DisplayMax.Text = "最大化";
             this.DisplayMax.UseVisualStyleBackColor = true;
@@ -226,11 +228,31 @@
             this.Reset.UseVisualStyleBackColor = true;
             this.Reset.Click += new System.EventHandler(this.Reset_Click);
             // 
-            // SetttingForm
+            // ReplaceColor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.ReplaceColor.AutoSize = true;
+            this.ReplaceColor.Location = new System.Drawing.Point(23, 140);
+            this.ReplaceColor.Name = "ReplaceColor";
+            this.ReplaceColor.Size = new System.Drawing.Size(284, 18);
+            this.ReplaceColor.TabIndex = 16;
+            this.ReplaceColor.Text = "5秒ごとに震度別色に置換した画像を表示する";
+            this.ReplaceColor.UseVisualStyleBackColor = true;
+            // 
+            // ReplaceColors
+            // 
+            this.ReplaceColors.Location = new System.Drawing.Point(304, 75);
+            this.ReplaceColors.Multiline = true;
+            this.ReplaceColors.Name = "ReplaceColors";
+            this.ReplaceColors.Size = new System.Drawing.Size(323, 109);
+            this.ReplaceColors.TabIndex = 17;
+            // 
+            // SettingForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 352);
+            this.Controls.Add(this.ReplaceColors);
+            this.Controls.Add(this.ReplaceColor);
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.ForeColorChange);
             this.Controls.Add(this.BackColorChange);
@@ -250,7 +272,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(656, 399);
-            this.Name = "SetttingForm";
+            this.Name = "SettingForm";
             this.Text = "S-net Viewer - 設定";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DisplayWidth)).EndInit();
@@ -279,5 +301,7 @@
         private System.Windows.Forms.Button BackColorChange;
         private System.Windows.Forms.Button ForeColorChange;
         private System.Windows.Forms.Button Reset;
+        private System.Windows.Forms.CheckBox ReplaceColor;
+        private System.Windows.Forms.TextBox ReplaceColors;
     }
 }
