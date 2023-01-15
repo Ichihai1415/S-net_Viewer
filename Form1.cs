@@ -58,7 +58,7 @@ namespace S_net_Viewer
                     ImageAttributes ImageAttributes = new ImageAttributes();
                     ImageAttributes.SetRemapTable(ChangeColors);
                     graphics.DrawImage(NormalImg, new Rectangle(0, 0, NormalImg.Width, NormalImg.Height), 0, 0, NormalImg.Width, NormalImg.Height, GraphicsUnit.Pixel, ImageAttributes);
-                    ChangeImg.MakeTransparent(Color.FromArgb(0,0,0));
+                    ChangeImg.MakeTransparent(Color.FromArgb(0, 0, 0));
                     SnetImgColor.BackgroundImage = ChangeImg;
                     graphics.Dispose();
                 }
@@ -95,28 +95,30 @@ namespace S_net_Viewer
             Configuration Config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
             if (File.Exists("setting.xml"))
             {
-                Settings.Default.Save();
+                if (!Directory.Exists(Config.FilePath.Replace("\\user.config", "")))
+                    Directory.CreateDirectory(Config.FilePath.Replace("\\user.config", ""));
                 File.Copy("setting.xml", Config.FilePath, true);
+                Settings.Default.Reload();
             }
-            Settings.Default.Reload();
             if (Settings.Default.MaxSize)
                 WindowState = FormWindowState.Maximized;
             else
                 WindowState = FormWindowState.Normal;
-            Size = Settings.Default.MainSize;
+            ClientSize = Settings.Default.MainSize;
             BackColor = Settings.Default.BackColor;
             SnetImg.BackColor = Settings.Default.BackColor;
+            SnetImgColor.BackColor = Settings.Default.BackColor;
             Time.BackColor = Settings.Default.BackColor;
             ForeColor = Settings.Default.ForeColor;
             Time.ForeColor = Settings.Default.ForeColor;
             List<ColorMap> ColorChange = new List<ColorMap>();
-            string[] Colors_ = Settings.Default.ReplaceColors.Replace("\n","").Split('/');
-            for (int i = 0; i*2 < Colors_.Count(); i++)
+            string[] Colors_ = Settings.Default.ReplaceColors.Replace("\n", "").Split('/');
+            for (int i = 0; i * 2 < Colors_.Count(); i++)
             {
-                string[] Colors1 = Colors_[i*2].Split(',');
-                string[] Colors2 = Colors_[i*2 + 1].Split(',');
+                string[] Colors1 = Colors_[i * 2].Split(',');
+                string[] Colors2 = Colors_[i * 2 + 1].Split(',');
                 ColorChange.Add(new ColorMap());
-                  ColorChange[i].OldColor = Color.FromArgb(Convert.ToInt16(Colors1[0]), Convert.ToInt16(Colors1[1]), Convert.ToInt16(Colors1[2]));
+                ColorChange[i].OldColor = Color.FromArgb(Convert.ToInt16(Colors1[0]), Convert.ToInt16(Colors1[1]), Convert.ToInt16(Colors1[2]));
                 ColorChange[i].NewColor = Color.FromArgb(Convert.ToInt16(Colors2[0]), Convert.ToInt16(Colors2[1]), Convert.ToInt16(Colors2[2]));
             }
             ChangeColors = ColorChange.ToArray();
@@ -160,7 +162,7 @@ namespace S_net_Viewer
 
         private void RC_SaveSize_Click(object sender, EventArgs e)
         {
-            Settings.Default.MainSize = new Size(Width, Height);
+            Settings.Default.MainSize = ClientSize;
             Settings.Default.Save();
             Configuration Config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
             File.Copy(Config.FilePath, "setting.xml", true);
@@ -168,7 +170,7 @@ namespace S_net_Viewer
 
         private void Display_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Settings.Default.MainSize = new Size(Width, Height);
+            Settings.Default.MainSize = ClientSize;
             Settings.Default.Save();
             Configuration Config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
             File.Copy(Config.FilePath, "setting.xml", true);
@@ -176,7 +178,7 @@ namespace S_net_Viewer
 
         private void ImgChange_Tick(object sender, EventArgs e)
         {
-            ImgChange.Interval = 5000;
+            ImgChange.Interval = 5000 - (DateTime.Now.Millisecond & 5000);
             if (DateTime.Now.Second % 10 < 5)//通常
                 SnetImgColor.Size = new Size(0, 0);
             else if (Settings.Default.ReplaceColor)
