@@ -44,7 +44,7 @@ namespace S_net_Viewer
             try
             {
                 if (DateTime.Now.Minute % 3 == 1)
-                    return;
+                    ;//return;
                 DateTime NowTime = DateTime.Now.ToUniversalTime();
                 DateTime DataTime = NowTime - TimeSpan.FromSeconds(DateTime.Now.Second);
                 if (DateTime.Now.Second < Settings.Default.GetDelay - 3)//遅延秒より秒が短い
