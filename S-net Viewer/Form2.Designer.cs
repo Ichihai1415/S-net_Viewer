@@ -100,7 +100,7 @@
             DisplayWidth.Name = "DisplayWidth";
             DisplayWidth.Size = new System.Drawing.Size(48, 21);
             DisplayWidth.TabIndex = 5;
-            DisplayWidth.Value = new decimal(new int[] { 200, 0, 0, 0 });
+            DisplayWidth.Value = new decimal(new int[] { 180, 0, 0, 0 });
             // 
             // DisplayHeight
             // 
@@ -109,7 +109,7 @@
             DisplayHeight.Name = "DisplayHeight";
             DisplayHeight.Size = new System.Drawing.Size(48, 21);
             DisplayHeight.TabIndex = 6;
-            DisplayHeight.Value = new decimal(new int[] { 400, 0, 0, 0 });
+            DisplayHeight.Value = new decimal(new int[] { 320, 0, 0, 0 });
             // 
             // Delay
             // 
@@ -199,6 +199,7 @@
             ReplaceColors.Name = "ReplaceColors";
             ReplaceColors.Size = new System.Drawing.Size(323, 109);
             ReplaceColors.TabIndex = 17;
+            ReplaceColors.Text = "(自動で設定を読み込み表示されます)";
             // 
             // SettingForm
             // 
