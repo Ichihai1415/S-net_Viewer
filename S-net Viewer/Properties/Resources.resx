@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,805 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ObsPointsSt" xml:space="preserve">
+    <value>{
+  "updated": "2025/08/02",
+  "description": "海しる用強震データのタイル画像の観測点位置情報です。これもMITライセンスで公開しています。　タイル画像URL: https://www.msil.go.jp/tiles/smoni/{time}/{time}/5/28/{y}.png {time}:yyyyMMddHHmm00,{y}:11or12",
+  "tiles": {
+    "z5": {
+      "x28": {
+        "y11": [
+          {
+            "name": "N.S6N05",
+            "x": 241,
+            "y": 242
+          },
+          {
+            "name": "N.S6N04",
+            "x": 253,
+            "y": 233
+          },
+          {
+            "name": "N.S6N03",
+            "x": 254,
+            "y": 220
+          },
+          {
+            "name": "N.S6N02",
+            "x": 251,
+            "y": 206
+          },
+          {
+            "name": "N.S6N01",
+            "x": 250,
+            "y": 198
+          },
+          {
+            "name": "N.S5N01",
+            "x": 243,
+            "y": 199
+          },
+          {
+            "name": "N.S5N02",
+            "x": 237,
+            "y": 203
+          },
+          {
+            "name": "N.S5N03",
+            "x": 230,
+            "y": 208
+          },
+          {
+            "name": "N.S5N04",
+            "x": 231,
+            "y": 216
+          },
+          {
+            "name": "N.S5N05",
+            "x": 237,
+            "y": 220
+          },
+          {
+            "name": "N.S5N06",
+            "x": 242,
+            "y": 226
+          },
+          {
+            "name": "N.S5N07",
+            "x": 239,
+            "y": 233
+          },
+          {
+            "name": "N.S5N08",
+            "x": 232,
+            "y": 238
+          },
+          {
+            "name": "N.S5N09",
+            "x": 224,
+            "y": 238
+          },
+          {
+            "name": "N.S5N10",
+            "x": 220,
+            "y": 234
+          },
+          {
+            "name": "N.S5N11",
+            "x": 220,
+            "y": 225
+          },
+          {
+            "name": "N.S5N12",
+            "x": 219,
+            "y": 220
+          },
+          {
+            "name": "N.S5N13",
+            "x": 212,
+            "y": 224
+          },
+          {
+            "name": "N.S5N14",
+            "x": 209,
+            "y": 231
+          },
+          {
+            "name": "N.S5N15",
+            "x": 207,
+            "y": 238
+          },
+          {
+            "name": "N.S5N16",
+            "x": 200,
+            "y": 241
+          },
+          {
+            "name": "N.S5N17",
+            "x": 192,
+            "y": 242
+          },
+          {
+            "name": "N.S5N18",
+            "x": 184,
+            "y": 240
+          },
+          {
+            "name": "N.S5N19",
+            "x": 178,
+            "y": 236
+          },
+          {
+            "name": "N.S5N20",
+            "x": 170,
+            "y": 235
+          },
+          {
+            "name": "N.S5N21",
+            "x": 164,
+            "y": 240
+          },
+          {
+            "name": "N.S5N22",
+            "x": 160,
+            "y": 248
+          },
+          {
+            "name": "N.S5N23",
+            "x": 156,
+            "y": 255
+          },
+          {
+            "name": "N.S4N03",
+            "x": 169,
+            "y": 253
+          },
+          {
+            "name": "N.S4N04",
+            "x": 176,
+            "y": 251
+          },
+          {
+            "name": "N.S4N05",
+            "x": 184,
+            "y": 253
+          },
+          {
+            "name": "N.S4N06",
+            "x": 192,
+            "y": 254
+          }
+        ],
+        "y12": [
+          {
+            "name": "N.S4N01",
+            "x": 154,
+            "y": 3
+          },
+          {
+            "name": "N.S4N02",
+            "x": 162,
+            "y": 2
+          },
+          {
+            "name": "N.S4N07",
+            "x": 199,
+            "y": 1
+          },
+          {
+            "name": "N.S4N08",
+            "x": 207,
+            "y": 3
+          },
+          {
+            "name": "N.S4N09",
+            "x": 208,
+            "y": 11
+          },
+          {
+            "name": "N.S4N10",
+            "x": 202,
+            "y": 15
+          },
+          {
+            "name": "N.S4N11",
+            "x": 194,
+            "y": 15
+          },
+          {
+            "name": "N.S4N12",
+            "x": 186,
+            "y": 14
+          },
+          {
+            "name": "N.S4N13",
+            "x": 181,
+            "y": 13
+          },
+          {
+            "name": "N.S4N14",
+            "x": 173,
+            "y": 10
+          },
+          {
+            "name": "N.S4N15",
+            "x": 165,
+            "y": 10
+          },
+          {
+            "name": "N.S4N16",
+            "x": 165,
+            "y": 17
+          },
+          {
+            "name": "N.S4N17",
+            "x": 168,
+            "y": 24
+          },
+          {
+            "name": "N.S4N18",
+            "x": 173,
+            "y": 24
+          },
+          {
+            "name": "N.S4N19",
+            "x": 181,
+            "y": 24
+          },
+          {
+            "name": "N.S4N20",
+            "x": 189,
+            "y": 25
+          },
+          {
+            "name": "N.S4N21",
+            "x": 197,
+            "y": 24
+          },
+          {
+            "name": "N.S4N22",
+            "x": 203,
+            "y": 26
+          },
+          {
+            "name": "N.S4N23",
+            "x": 202,
+            "y": 34
+          },
+          {
+            "name": "N.S4N24",
+            "x": 198,
+            "y": 38
+          },
+          {
+            "name": "N.S4N25",
+            "x": 190,
+            "y": 37
+          },
+          {
+            "name": "N.S4N26",
+            "x": 182,
+            "y": 35
+          },
+          {
+            "name": "N.S4N27",
+            "x": 174,
+            "y": 35
+          },
+          {
+            "name": "N.S4N28",
+            "x": 166,
+            "y": 35
+          },
+          {
+            "name": "N.S3N01",
+            "x": 170,
+            "y": 43
+          },
+          {
+            "name": "N.S3N02",
+            "x": 176,
+            "y": 46
+          },
+          {
+            "name": "N.S3N03",
+            "x": 184,
+            "y": 47
+          },
+          {
+            "name": "N.S3N04",
+            "x": 192,
+            "y": 48
+          },
+          {
+            "name": "N.S3N05",
+            "x": 199,
+            "y": 50
+          },
+          {
+            "name": "N.S3N06",
+            "x": 203,
+            "y": 56
+          },
+          {
+            "name": "N.S3N07",
+            "x": 200,
+            "y": 62
+          },
+          {
+            "name": "N.S3N08",
+            "x": 192,
+            "y": 63
+          },
+          {
+            "name": "N.S3N09",
+            "x": 185,
+            "y": 64
+          },
+          {
+            "name": "N.S3N10",
+            "x": 178,
+            "y": 61
+          },
+          {
+            "name": "N.S3N11",
+            "x": 170,
+            "y": 59
+          },
+          {
+            "name": "N.S3N12",
+            "x": 163,
+            "y": 62
+          },
+          {
+            "name": "N.S3N13",
+            "x": 163,
+            "y": 69
+          },
+          {
+            "name": "N.S3N14",
+            "x": 171,
+            "y": 71
+          },
+          {
+            "name": "N.S3N15",
+            "x": 178,
+            "y": 73
+          },
+          {
+            "name": "N.S3N16",
+            "x": 185,
+            "y": 73
+          },
+          {
+            "name": "N.S3N17",
+            "x": 193,
+            "y": 74
+          },
+          {
+            "name": "N.S3N18",
+            "x": 200,
+            "y": 77
+          },
+          {
+            "name": "N.S3N19",
+            "x": 199,
+            "y": 84
+          },
+          {
+            "name": "N.S3N20",
+            "x": 194,
+            "y": 88
+          },
+          {
+            "name": "N.S3N21",
+            "x": 188,
+            "y": 87
+          },
+          {
+            "name": "N.S3N22",
+            "x": 180,
+            "y": 86
+          },
+          {
+            "name": "N.S3N23",
+            "x": 172,
+            "y": 85
+          },
+          {
+            "name": "N.S3N24",
+            "x": 164,
+            "y": 84
+          },
+          {
+            "name": "N.S3N25",
+            "x": 156,
+            "y": 82
+          },
+          {
+            "name": "N.S3N26",
+            "x": 149,
+            "y": 82
+          },
+          {
+            "name": "N.S2N01",
+            "x": 145,
+            "y": 90
+          },
+          {
+            "name": "N.S2N02",
+            "x": 151,
+            "y": 94
+          },
+          {
+            "name": "N.S2N03",
+            "x": 159,
+            "y": 94
+          },
+          {
+            "name": "N.S2N04",
+            "x": 165,
+            "y": 95
+          },
+          {
+            "name": "N.S2N05",
+            "x": 173,
+            "y": 98
+          },
+          {
+            "name": "N.S2N06",
+            "x": 180,
+            "y": 101
+          },
+          {
+            "name": "N.S2N07",
+            "x": 186,
+            "y": 103
+          },
+          {
+            "name": "N.S2N08",
+            "x": 183,
+            "y": 109
+          },
+          {
+            "name": "N.S2N09",
+            "x": 178,
+            "y": 113
+          },
+          {
+            "name": "N.S2N10",
+            "x": 170,
+            "y": 112
+          },
+          {
+            "name": "N.S2N11",
+            "x": 163,
+            "y": 110
+          },
+          {
+            "name": "N.S2N12",
+            "x": 156,
+            "y": 108
+          },
+          {
+            "name": "N.S2N13",
+            "x": 150,
+            "y": 106
+          },
+          {
+            "name": "N.S2N14",
+            "x": 145,
+            "y": 112
+          },
+          {
+            "name": "N.S2N15",
+            "x": 144,
+            "y": 120
+          },
+          {
+            "name": "N.S2N16",
+            "x": 149,
+            "y": 125
+          },
+          {
+            "name": "N.S2N17",
+            "x": 155,
+            "y": 126
+          },
+          {
+            "name": "N.S2N18",
+            "x": 162,
+            "y": 124
+          },
+          {
+            "name": "N.S2N19",
+            "x": 169,
+            "y": 126
+          },
+          {
+            "name": "N.S2N20",
+            "x": 173,
+            "y": 133
+          },
+          {
+            "name": "N.S2N21",
+            "x": 172,
+            "y": 138
+          },
+          {
+            "name": "N.S2N22",
+            "x": 169,
+            "y": 145
+          },
+          {
+            "name": "N.S2N23",
+            "x": 162,
+            "y": 144
+          },
+          {
+            "name": "N.S2N24",
+            "x": 154,
+            "y": 143
+          },
+          {
+            "name": "N.S2N25",
+            "x": 148,
+            "y": 141
+          },
+          {
+            "name": "N.S2N26",
+            "x": 140,
+            "y": 140
+          },
+          {
+            "name": "N.S1N01",
+            "x": 136,
+            "y": 147
+          },
+          {
+            "name": "N.S1N02",
+            "x": 145,
+            "y": 148
+          },
+          {
+            "name": "N.S1N03",
+            "x": 151,
+            "y": 151
+          },
+          {
+            "name": "N.S1N04",
+            "x": 156,
+            "y": 155
+          },
+          {
+            "name": "N.S1N05",
+            "x": 160,
+            "y": 160
+          },
+          {
+            "name": "N.S1N06",
+            "x": 156,
+            "y": 165
+          },
+          {
+            "name": "N.S1N07",
+            "x": 150,
+            "y": 164
+          },
+          {
+            "name": "N.S1N08",
+            "x": 145,
+            "y": 159
+          },
+          {
+            "name": "N.S1N09",
+            "x": 142,
+            "y": 165
+          },
+          {
+            "name": "N.S1N10",
+            "x": 140,
+            "y": 169
+          },
+          {
+            "name": "N.S1N11",
+            "x": 134,
+            "y": 168
+          },
+          {
+            "name": "N.S1N12",
+            "x": 131,
+            "y": 171
+          },
+          {
+            "name": "N.S1N13",
+            "x": 134,
+            "y": 174
+          },
+          {
+            "name": "N.S1N14",
+            "x": 137,
+            "y": 181
+          },
+          {
+            "name": "N.S1N15",
+            "x": 144,
+            "y": 184
+          },
+          {
+            "name": "N.S1N16",
+            "x": 149,
+            "y": 189
+          },
+          {
+            "name": "N.S1N17",
+            "x": 144,
+            "y": 193
+          },
+          {
+            "name": "N.S1N18",
+            "x": 136,
+            "y": 191
+          },
+          {
+            "name": "N.S1N19",
+            "x": 130,
+            "y": 192
+          },
+          {
+            "name": "N.S1N20",
+            "x": 122,
+            "y": 191
+          },
+          {
+            "name": "N.S1N21",
+            "x": 117,
+            "y": 187
+          },
+          {
+            "name": "N.S1N22",
+            "x": 115,
+            "y": 181
+          },
+          {
+            "name": "N.ST1H",
+            "x": 111,
+            "y": 183
+          },
+          {
+            "name": "N.ST2H",
+            "x": 110,
+            "y": 178
+          },
+          {
+            "name": "N.ST3H",
+            "x": 105,
+            "y": 177
+          },
+          {
+            "name": "N.ST4H",
+            "x": 103,
+            "y": 175
+          },
+          {
+            "name": "N.ST5H",
+            "x": 100,
+            "y": 173
+          },
+          {
+            "name": "N.ST6H",
+            "x": 99,
+            "y": 171
+          },
+          {
+            "name": "N.S6N25",
+            "x": 109,
+            "y": 181
+          },
+          {
+            "name": "N.S6N24",
+            "x": 112,
+            "y": 193
+          },
+          {
+            "name": "N.S6N23",
+            "x": 124,
+            "y": 200
+          },
+          {
+            "name": "N.S6N22",
+            "x": 139,
+            "y": 203
+          },
+          {
+            "name": "N.S6N21",
+            "x": 153,
+            "y": 200
+          },
+          {
+            "name": "N.S6N20",
+            "x": 164,
+            "y": 191
+          },
+          {
+            "name": "N.S6N19",
+            "x": 171,
+            "y": 179
+          },
+          {
+            "name": "N.S6N18",
+            "x": 174,
+            "y": 166
+          },
+          {
+            "name": "N.S6N17",
+            "x": 181,
+            "y": 152
+          },
+          {
+            "name": "N.S6N16",
+            "x": 188,
+            "y": 140
+          },
+          {
+            "name": "N.S6N15",
+            "x": 195,
+            "y": 127
+          },
+          {
+            "name": "N.S6N14",
+            "x": 203,
+            "y": 114
+          },
+          {
+            "name": "N.S6N13",
+            "x": 209,
+            "y": 101
+          },
+          {
+            "name": "N.S6N12",
+            "x": 212,
+            "y": 86
+          },
+          {
+            "name": "N.S6N11",
+            "x": 214,
+            "y": 71
+          },
+          {
+            "name": "N.S6N10",
+            "x": 218,
+            "y": 57
+          },
+          {
+            "name": "N.S6N09",
+            "x": 221,
+            "y": 41
+          },
+          {
+            "name": "N.S6N08",
+            "x": 222,
+            "y": 26
+          },
+          {
+            "name": "N.S6N07",
+            "x": 225,
+            "y": 11
+          },
+          {
+            "name": "N.S6N06",
+            "x": 235,
+            "y": 0
+          }
+        ]
+      }
+    }
+  }
+}</value>
+  </data>
 </root>

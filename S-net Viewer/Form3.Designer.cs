@@ -28,29 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TB_NumDatas = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            TB_NumDatas = new System.Windows.Forms.TextBox();
+            SuspendLayout();
             // 
             // TB_NumDatas
             // 
-            this.TB_NumDatas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TB_NumDatas.Location = new System.Drawing.Point(0, 0);
-            this.TB_NumDatas.Multiline = true;
-            this.TB_NumDatas.Name = "TB_NumDatas";
-            this.TB_NumDatas.ReadOnly = true;
-            this.TB_NumDatas.Size = new System.Drawing.Size(200, 400);
-            this.TB_NumDatas.TabIndex = 0;
+            TB_NumDatas.Cursor = System.Windows.Forms.Cursors.IBeam;
+            TB_NumDatas.Dock = System.Windows.Forms.DockStyle.Fill;
+            TB_NumDatas.Font = new System.Drawing.Font("Yu Gothic UI", 19F);
+            TB_NumDatas.Location = new System.Drawing.Point(0, 0);
+            TB_NumDatas.Margin = new System.Windows.Forms.Padding(4);
+            TB_NumDatas.Multiline = true;
+            TB_NumDatas.Name = "TB_NumDatas";
+            TB_NumDatas.ReadOnly = true;
+            TB_NumDatas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            TB_NumDatas.Size = new System.Drawing.Size(240, 480);
+            TB_NumDatas.TabIndex = 0;
+            TB_NumDatas.Text = resources.GetString("TB_NumDatas.Text");
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(200, 400);
-            this.Controls.Add(this.TB_NumDatas);
-            this.Name = "Form3";
-            this.Text = "SNV-観測点データ";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(240, 480);
+            Controls.Add(TB_NumDatas);
+            Margin = new System.Windows.Forms.Padding(4);
+            MaximumSize = new System.Drawing.Size(256, 9999);
+            Name = "Form3";
+            Text = "SNV-観測点データ";
+            FormClosed += Form3_FormClosed;
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
