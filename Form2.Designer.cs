@@ -29,257 +29,210 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
-            this.Save = new System.Windows.Forms.Button();
-            this.InfoText2 = new System.Windows.Forms.Label();
-            this.InfoText = new System.Windows.Forms.Label();
-            this.ColorDialog = new System.Windows.Forms.ColorDialog();
-            this.Color_Back = new System.Windows.Forms.Label();
-            this.DisplayWidth = new System.Windows.Forms.NumericUpDown();
-            this.DisplayHeight = new System.Windows.Forms.NumericUpDown();
-            this.URLbox = new System.Windows.Forms.TextBox();
-            this.UmiSiru = new System.Windows.Forms.LinkLabel();
-            this.Delay = new System.Windows.Forms.NumericUpDown();
-            this.DisplayTime = new System.Windows.Forms.CheckBox();
-            this.DisplayMax = new System.Windows.Forms.CheckBox();
-            this.Color_Fore = new System.Windows.Forms.Label();
-            this.BackColorChange = new System.Windows.Forms.Button();
-            this.ForeColorChange = new System.Windows.Forms.Button();
-            this.Reset = new System.Windows.Forms.Button();
-            this.ReplaceColor = new System.Windows.Forms.CheckBox();
-            this.ReplaceColors = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DisplayWidth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DisplayHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Delay)).BeginInit();
-            this.SuspendLayout();
+            Save = new System.Windows.Forms.Button();
+            InfoText2 = new System.Windows.Forms.Label();
+            InfoText = new System.Windows.Forms.Label();
+            ColorDialog = new System.Windows.Forms.ColorDialog();
+            Color_Back = new System.Windows.Forms.Label();
+            DisplayWidth = new System.Windows.Forms.NumericUpDown();
+            DisplayHeight = new System.Windows.Forms.NumericUpDown();
+            Delay = new System.Windows.Forms.NumericUpDown();
+            DisplayTime = new System.Windows.Forms.CheckBox();
+            DisplayMax = new System.Windows.Forms.CheckBox();
+            Color_Fore = new System.Windows.Forms.Label();
+            BackColorChange = new System.Windows.Forms.Button();
+            ForeColorChange = new System.Windows.Forms.Button();
+            Reset = new System.Windows.Forms.Button();
+            ReplaceColor = new System.Windows.Forms.CheckBox();
+            ReplaceColors = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)DisplayWidth).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DisplayHeight).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Delay).BeginInit();
+            SuspendLayout();
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(13, 318);
-            this.Save.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(100, 30);
-            this.Save.TabIndex = 0;
-            this.Save.Text = "保存";
-            this.Save.UseVisualStyleBackColor = true;
-            this.Save.Click += new System.EventHandler(this.Save_Click);
+            Save.Location = new System.Drawing.Point(13, 198);
+            Save.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Save.Name = "Save";
+            Save.Size = new System.Drawing.Size(100, 30);
+            Save.TabIndex = 0;
+            Save.Text = "保存";
+            Save.UseVisualStyleBackColor = true;
+            Save.Click += Save_Click;
             // 
             // InfoText2
             // 
-            this.InfoText2.AutoSize = true;
-            this.InfoText2.Location = new System.Drawing.Point(134, 318);
-            this.InfoText2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.InfoText2.Name = "InfoText2";
-            this.InfoText2.Size = new System.Drawing.Size(367, 28);
-            this.InfoText2.TabIndex = 1;
-            this.InfoText2.Text = "※このウィンドウを閉じると設定が再読み込みされます。\r\n　画像が表示されない場合再起動するかURLを確認してください。\r\n";
+            InfoText2.AutoSize = true;
+            InfoText2.Location = new System.Drawing.Point(117, 200);
+            InfoText2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            InfoText2.Name = "InfoText2";
+            InfoText2.Size = new System.Drawing.Size(401, 28);
+            InfoText2.TabIndex = 1;
+            InfoText2.Text = "※このウィンドウを閉じると設定が再読み込みされます。\r\n　画像が表示されない場合再起動するか取得遅延を大きくしてください。\r\n";
             // 
             // InfoText
             // 
-            this.InfoText.Location = new System.Drawing.Point(20, 20);
-            this.InfoText.Name = "InfoText";
-            this.InfoText.Size = new System.Drawing.Size(600, 320);
-            this.InfoText.TabIndex = 2;
-            this.InfoText.Text = resources.GetString("InfoText.Text");
+            InfoText.Location = new System.Drawing.Point(20, 20);
+            InfoText.Name = "InfoText";
+            InfoText.Size = new System.Drawing.Size(600, 178);
+            InfoText.TabIndex = 2;
+            InfoText.Text = resources.GetString("InfoText.Text");
             // 
             // ColorDialog
             // 
-            this.ColorDialog.AnyColor = true;
-            this.ColorDialog.FullOpen = true;
+            ColorDialog.AnyColor = true;
+            ColorDialog.FullOpen = true;
             // 
             // Color_Back
             // 
-            this.Color_Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(90)))));
-            this.Color_Back.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Color_Back.Location = new System.Drawing.Point(71, 102);
-            this.Color_Back.Name = "Color_Back";
-            this.Color_Back.Size = new System.Drawing.Size(20, 20);
-            this.Color_Back.TabIndex = 3;
+            Color_Back.BackColor = System.Drawing.Color.FromArgb(45, 45, 90);
+            Color_Back.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            Color_Back.Location = new System.Drawing.Point(71, 102);
+            Color_Back.Name = "Color_Back";
+            Color_Back.Size = new System.Drawing.Size(20, 20);
+            Color_Back.TabIndex = 3;
             // 
             // DisplayWidth
             // 
-            this.DisplayWidth.Location = new System.Drawing.Point(124, 18);
-            this.DisplayWidth.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.DisplayWidth.Name = "DisplayWidth";
-            this.DisplayWidth.Size = new System.Drawing.Size(48, 21);
-            this.DisplayWidth.TabIndex = 5;
-            this.DisplayWidth.Value = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
+            DisplayWidth.Location = new System.Drawing.Point(124, 18);
+            DisplayWidth.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            DisplayWidth.Name = "DisplayWidth";
+            DisplayWidth.Size = new System.Drawing.Size(48, 21);
+            DisplayWidth.TabIndex = 5;
+            DisplayWidth.Value = new decimal(new int[] { 180, 0, 0, 0 });
             // 
             // DisplayHeight
             // 
-            this.DisplayHeight.Location = new System.Drawing.Point(188, 18);
-            this.DisplayHeight.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.DisplayHeight.Name = "DisplayHeight";
-            this.DisplayHeight.Size = new System.Drawing.Size(48, 21);
-            this.DisplayHeight.TabIndex = 6;
-            this.DisplayHeight.Value = new decimal(new int[] {
-            400,
-            0,
-            0,
-            0});
-            // 
-            // URLbox
-            // 
-            this.URLbox.Location = new System.Drawing.Point(23, 262);
-            this.URLbox.Multiline = true;
-            this.URLbox.Name = "URLbox";
-            this.URLbox.Size = new System.Drawing.Size(597, 44);
-            this.URLbox.TabIndex = 7;
-            this.URLbox.Text = resources.GetString("URLbox.Text");
-            // 
-            // UmiSiru
-            // 
-            this.UmiSiru.AutoSize = true;
-            this.UmiSiru.Location = new System.Drawing.Point(106, 187);
-            this.UmiSiru.Name = "UmiSiru";
-            this.UmiSiru.Size = new System.Drawing.Size(303, 14);
-            this.UmiSiru.TabIndex = 8;
-            this.UmiSiru.TabStop = true;
-            this.UmiSiru.Text = "https://www.msil.go.jp/msil/htm/main.html?Lang=0";
-            this.UmiSiru.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UmiSiru_LinkClicked);
+            DisplayHeight.Location = new System.Drawing.Point(188, 18);
+            DisplayHeight.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            DisplayHeight.Name = "DisplayHeight";
+            DisplayHeight.Size = new System.Drawing.Size(48, 21);
+            DisplayHeight.TabIndex = 6;
+            DisplayHeight.Value = new decimal(new int[] { 320, 0, 0, 0 });
             // 
             // Delay
             // 
-            this.Delay.Location = new System.Drawing.Point(83, 45);
-            this.Delay.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.Delay.Name = "Delay";
-            this.Delay.Size = new System.Drawing.Size(48, 21);
-            this.Delay.TabIndex = 9;
-            this.Delay.Value = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
+            Delay.Location = new System.Drawing.Point(83, 45);
+            Delay.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
+            Delay.Name = "Delay";
+            Delay.Size = new System.Drawing.Size(48, 21);
+            Delay.TabIndex = 9;
+            Delay.Value = new decimal(new int[] { 15, 0, 0, 0 });
             // 
             // DisplayTime
             // 
-            this.DisplayTime.AutoSize = true;
-            this.DisplayTime.Checked = true;
-            this.DisplayTime.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.DisplayTime.Location = new System.Drawing.Point(23, 75);
-            this.DisplayTime.Name = "DisplayTime";
-            this.DisplayTime.Size = new System.Drawing.Size(207, 18);
-            this.DisplayTime.TabIndex = 10;
-            this.DisplayTime.Text = "取得時刻・遅延秒数を表示する";
-            this.DisplayTime.UseVisualStyleBackColor = true;
+            DisplayTime.AutoSize = true;
+            DisplayTime.Checked = true;
+            DisplayTime.CheckState = System.Windows.Forms.CheckState.Checked;
+            DisplayTime.Location = new System.Drawing.Point(23, 75);
+            DisplayTime.Name = "DisplayTime";
+            DisplayTime.Size = new System.Drawing.Size(207, 18);
+            DisplayTime.TabIndex = 10;
+            DisplayTime.Text = "取得時刻・遅延秒数を表示する";
+            DisplayTime.UseVisualStyleBackColor = true;
             // 
             // DisplayMax
             // 
-            this.DisplayMax.AutoSize = true;
-            this.DisplayMax.Location = new System.Drawing.Point(239, 35);
-            this.DisplayMax.Name = "DisplayMax";
-            this.DisplayMax.Size = new System.Drawing.Size(68, 18);
-            this.DisplayMax.TabIndex = 11;
-            this.DisplayMax.Text = "最大化";
-            this.DisplayMax.UseVisualStyleBackColor = true;
+            DisplayMax.AutoSize = true;
+            DisplayMax.Location = new System.Drawing.Point(239, 35);
+            DisplayMax.Name = "DisplayMax";
+            DisplayMax.Size = new System.Drawing.Size(68, 18);
+            DisplayMax.TabIndex = 11;
+            DisplayMax.Text = "最大化";
+            DisplayMax.UseVisualStyleBackColor = true;
             // 
             // Color_Fore
             // 
-            this.Color_Fore.BackColor = System.Drawing.Color.White;
-            this.Color_Fore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Color_Fore.Location = new System.Drawing.Point(209, 102);
-            this.Color_Fore.Name = "Color_Fore";
-            this.Color_Fore.Size = new System.Drawing.Size(20, 20);
-            this.Color_Fore.TabIndex = 12;
+            Color_Fore.BackColor = System.Drawing.Color.White;
+            Color_Fore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            Color_Fore.Location = new System.Drawing.Point(209, 102);
+            Color_Fore.Name = "Color_Fore";
+            Color_Fore.Size = new System.Drawing.Size(20, 20);
+            Color_Fore.TabIndex = 12;
             // 
             // BackColorChange
             // 
-            this.BackColorChange.Location = new System.Drawing.Point(97, 101);
-            this.BackColorChange.Name = "BackColorChange";
-            this.BackColorChange.Size = new System.Drawing.Size(50, 23);
-            this.BackColorChange.TabIndex = 13;
-            this.BackColorChange.Text = "変更";
-            this.BackColorChange.UseVisualStyleBackColor = true;
-            this.BackColorChange.Click += new System.EventHandler(this.BackColorChange_Click);
+            BackColorChange.Location = new System.Drawing.Point(97, 101);
+            BackColorChange.Name = "BackColorChange";
+            BackColorChange.Size = new System.Drawing.Size(50, 23);
+            BackColorChange.TabIndex = 13;
+            BackColorChange.Text = "変更";
+            BackColorChange.UseVisualStyleBackColor = true;
+            BackColorChange.Click += BackColorChange_Click;
             // 
             // ForeColorChange
             // 
-            this.ForeColorChange.Location = new System.Drawing.Point(235, 101);
-            this.ForeColorChange.Name = "ForeColorChange";
-            this.ForeColorChange.Size = new System.Drawing.Size(50, 23);
-            this.ForeColorChange.TabIndex = 14;
-            this.ForeColorChange.Text = "変更";
-            this.ForeColorChange.UseVisualStyleBackColor = true;
-            this.ForeColorChange.Click += new System.EventHandler(this.ForeColorChange_Click);
+            ForeColorChange.Location = new System.Drawing.Point(235, 101);
+            ForeColorChange.Name = "ForeColorChange";
+            ForeColorChange.Size = new System.Drawing.Size(50, 23);
+            ForeColorChange.TabIndex = 14;
+            ForeColorChange.Text = "変更";
+            ForeColorChange.UseVisualStyleBackColor = true;
+            ForeColorChange.Click += ForeColorChange_Click;
             // 
             // Reset
             // 
-            this.Reset.Location = new System.Drawing.Point(527, 318);
-            this.Reset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Reset.Name = "Reset";
-            this.Reset.Size = new System.Drawing.Size(100, 30);
-            this.Reset.TabIndex = 15;
-            this.Reset.Text = "リセット";
-            this.Reset.UseVisualStyleBackColor = true;
-            this.Reset.Click += new System.EventHandler(this.Reset_Click);
+            Reset.Location = new System.Drawing.Point(527, 198);
+            Reset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Reset.Name = "Reset";
+            Reset.Size = new System.Drawing.Size(100, 30);
+            Reset.TabIndex = 15;
+            Reset.Text = "リセット";
+            Reset.UseVisualStyleBackColor = true;
+            Reset.Click += Reset_Click;
             // 
             // ReplaceColor
             // 
-            this.ReplaceColor.AutoSize = true;
-            this.ReplaceColor.Location = new System.Drawing.Point(23, 140);
-            this.ReplaceColor.Name = "ReplaceColor";
-            this.ReplaceColor.Size = new System.Drawing.Size(284, 18);
-            this.ReplaceColor.TabIndex = 16;
-            this.ReplaceColor.Text = "5秒ごとに震度別色に置換した画像を表示する";
-            this.ReplaceColor.UseVisualStyleBackColor = true;
+            ReplaceColor.AutoSize = true;
+            ReplaceColor.Location = new System.Drawing.Point(23, 131);
+            ReplaceColor.Name = "ReplaceColor";
+            ReplaceColor.Size = new System.Drawing.Size(284, 18);
+            ReplaceColor.TabIndex = 16;
+            ReplaceColor.Text = "5秒ごとに震度別色に置換した画像を表示する";
+            ReplaceColor.UseVisualStyleBackColor = true;
             // 
             // ReplaceColors
             // 
-            this.ReplaceColors.Location = new System.Drawing.Point(304, 75);
-            this.ReplaceColors.Multiline = true;
-            this.ReplaceColors.Name = "ReplaceColors";
-            this.ReplaceColors.Size = new System.Drawing.Size(323, 109);
-            this.ReplaceColors.TabIndex = 17;
+            ReplaceColors.Location = new System.Drawing.Point(304, 75);
+            ReplaceColors.Multiline = true;
+            ReplaceColors.Name = "ReplaceColors";
+            ReplaceColors.Size = new System.Drawing.Size(323, 109);
+            ReplaceColors.TabIndex = 17;
+            ReplaceColors.Text = "(自動で設定を読み込み表示されます)";
             // 
             // SettingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 352);
-            this.Controls.Add(this.ReplaceColors);
-            this.Controls.Add(this.ReplaceColor);
-            this.Controls.Add(this.Reset);
-            this.Controls.Add(this.ForeColorChange);
-            this.Controls.Add(this.BackColorChange);
-            this.Controls.Add(this.Color_Fore);
-            this.Controls.Add(this.DisplayMax);
-            this.Controls.Add(this.DisplayTime);
-            this.Controls.Add(this.Delay);
-            this.Controls.Add(this.UmiSiru);
-            this.Controls.Add(this.URLbox);
-            this.Controls.Add(this.DisplayHeight);
-            this.Controls.Add(this.DisplayWidth);
-            this.Controls.Add(this.Color_Back);
-            this.Controls.Add(this.InfoText2);
-            this.Controls.Add(this.Save);
-            this.Controls.Add(this.InfoText);
-            this.Font = new System.Drawing.Font("MS UI Gothic", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(656, 399);
-            this.Name = "SettingForm";
-            this.Text = "S-net Viewer - 設定";
-            this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DisplayWidth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DisplayHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Delay)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(640, 240);
+            Controls.Add(ReplaceColors);
+            Controls.Add(ReplaceColor);
+            Controls.Add(Reset);
+            Controls.Add(ForeColorChange);
+            Controls.Add(BackColorChange);
+            Controls.Add(Color_Fore);
+            Controls.Add(DisplayMax);
+            Controls.Add(DisplayTime);
+            Controls.Add(Delay);
+            Controls.Add(DisplayHeight);
+            Controls.Add(DisplayWidth);
+            Controls.Add(Color_Back);
+            Controls.Add(InfoText2);
+            Controls.Add(Save);
+            Controls.Add(InfoText);
+            Font = new System.Drawing.Font("MS UI Gothic", 10F);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            Name = "SettingForm";
+            Text = "S-net Viewer - 設定";
+            Load += Form2_Load;
+            ((System.ComponentModel.ISupportInitialize)DisplayWidth).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DisplayHeight).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Delay).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -292,8 +245,6 @@
         private System.Windows.Forms.Label Color_Back;
         private System.Windows.Forms.NumericUpDown DisplayWidth;
         private System.Windows.Forms.NumericUpDown DisplayHeight;
-        private System.Windows.Forms.TextBox URLbox;
-        private System.Windows.Forms.LinkLabel UmiSiru;
         private System.Windows.Forms.NumericUpDown Delay;
         private System.Windows.Forms.CheckBox DisplayTime;
         private System.Windows.Forms.CheckBox DisplayMax;

@@ -117,21 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="InfoText.Text" xml:space="preserve">
-    <value>画面・画像サイズ:              x               標準180x320 画像は伸ばして表示 右クリックメニューでも設定可能
-
-取得遅延:             秒(1分ごと更新)                     置換色 (元の色1,置換後色1/元の色2,置換後色2...)
-                                                                      例: 10,20,40/20,50,70/... 改行があっても可 0,0,0は透過
-
-
-背景色:                       文字色:
-
-
-
-※備考: v1.2.0から取得方法が変わり取得URLの
-　　　　　　指定はできなくなりました。</value>
+  <data name="TB_NumDatas.Text" xml:space="preserve">
+    <value>---- / -- / --  -- : --
+--------------------
+- - - - - -    - - -
+- - - - - -    - - -
+- - - - - -    - - -
+- - - - - -    - - -
+- - - - - -    - - -
+- - - - - -    - - -
+- - - - - -    - - -
+- - - - - -    - - -
+- - - - - -    - - -
+- - - - - -    - - -
+- - - - - -    - - -</value>
   </data>
-  <metadata name="ColorDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

@@ -12,7 +12,7 @@ namespace S_net_Viewer.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.4.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.14.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,25 +25,13 @@ namespace S_net_Viewer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("200, 400")]
+        [global::System.Configuration.DefaultSettingValueAttribute("180, 320")]
         public global::System.Drawing.Size MainSize {
             get {
                 return ((global::System.Drawing.Size)(this["MainSize"]));
             }
             set {
                 this["MainSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"https://www.msil.go.jp/arcgis/rest/services/Msil/DisasterPrevImg1/ImageServer//exportImage?f=image&renderingRule={%22rasterFunction%22:%22DisasterPrevImg1%22}&time={Time},{Time}&bbox=15900000,3900000,15900000,5500000&imageSR=102100&bboxSR=102100&size={Size}")]
-        public string URL {
-            get {
-                return ((string)(this["URL"]));
-            }
-            set {
-                this["URL"] = value;
             }
         }
         
@@ -97,7 +85,7 @@ namespace S_net_Viewer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        [global::System.Configuration.DefaultSettingValueAttribute("15")]
         public int GetDelay {
             get {
                 return ((int)(this["GetDelay"]));
