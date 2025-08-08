@@ -26,8 +26,8 @@ namespace S_net_Viewer
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            //Timer.Interval = 1000 * (60 - DateTime.Now.Second + Settings.Default.GetDelay);//臨時1分ごと
-            Timer.Interval = 1000 * (60 * (3 - (DateTime.Now.Minute % 3)) - DateTime.Now.Second + Settings.Default.GetDelay);//3x分+遅延までのミリ秒
+            Timer.Interval = 1000 * (60 - DateTime.Now.Second + Settings.Default.GetDelay);//1分ごと
+            //Timer.Interval = 1000 * (60 * (3 - (DateTime.Now.Minute % 3)) - DateTime.Now.Second + Settings.Default.GetDelay);//3x分+遅延までのミリ秒
             GetImg();
         }
 
@@ -35,8 +35,8 @@ namespace S_net_Viewer
 
         private void Display_Load(object sender, EventArgs e)
         {
-            Timer.Interval = 1000 * (60 * (3 - (DateTime.Now.Minute % 3)) - DateTime.Now.Second + Settings.Default.GetDelay);//3x分+遅延までのミリ秒
-            //Timer.Interval = 1000 * (60 - DateTime.Now.Second + Settings.Default.GetDelay);//臨時1分ごと
+            //Timer.Interval = 1000 * (60 * (3 - (DateTime.Now.Minute % 3)) - DateTime.Now.Second + Settings.Default.GetDelay);//3x分+遅延までのミリ秒
+            Timer.Interval = 1000 * (60 - DateTime.Now.Second + Settings.Default.GetDelay);//1分ごと
             ImgChange.Interval = 5000 - (DateTime.Now.Millisecond & 5000);
             SettingReload();
             GetImg();

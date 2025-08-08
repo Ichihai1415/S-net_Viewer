@@ -1,5 +1,5 @@
 ﻿{
-  "updated": "2025/08/02",
+  "updated": "2025/08/08",
   "description": "海しる用強震データのタイル画像の観測点位置情報です。これもMITライセンスで公開しています。　タイル画像URL: https://www.msil.go.jp/tiles/smoni/{time}/{time}/5/28/{y}.png {time}:yyyyMMddHHmm00,{y}:11or12",
   "tiles": {
     "z5": {
@@ -175,7 +175,7 @@
           {
             "name": "N.S4N02",
             "x": 162,
-            "y": 2
+            "y": 0
           },
           {
             "name": "N.S4N07",
