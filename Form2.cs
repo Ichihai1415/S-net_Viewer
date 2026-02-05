@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace S_net_Viewer
 {
-    public partial class SetttingForm : Form
+    public partial class SettingForm : Form
     {
-        public SetttingForm()
+        public SettingForm()
         {
             InitializeComponent();
         }
@@ -30,7 +30,8 @@ namespace S_net_Viewer
                 DisplayTime.Checked = false;
             Color_Back.BackColor = Settings.Default.BackColor;
             Color_Fore.BackColor = Settings.Default.ForeColor;
-            URLbox.Text = Settings.Default.URL;
+            ReplaceColor.Checked = Settings.Default.ReplaceColor;
+            ReplaceColors.Text = Settings.Default.ReplaceColors;
         }
 
         private void Save_Click(object sender, EventArgs e)
@@ -47,7 +48,8 @@ namespace S_net_Viewer
                 Settings.Default.ViewTime = false;
             Settings.Default.BackColor = Color_Back.BackColor;
             Settings.Default.ForeColor = Color_Fore.BackColor;
-            Settings.Default.URL = URLbox.Text;
+            Settings.Default.ReplaceColor = ReplaceColor.Checked;
+            Settings.Default.ReplaceColors = ReplaceColors.Text;
             Settings.Default.Save();
             Configuration Config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
             File.Copy(Config.FilePath, "setting.xml", true);
@@ -75,17 +77,17 @@ namespace S_net_Viewer
 
         private void Reset_Click(object sender, EventArgs e)
         {
-            DialogResult Result = MessageBox.Show("リセットしてもよろしいですか？\nリセットすると設定画面を開き直します。", "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (Result == DialogResult.Yes)
+            var dResult = MessageBox.Show("リセットしてもよろしいですか？\nリセットすると設定画面を開き直します。", "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dResult == DialogResult.Yes)
             {
                 Settings.Default.Reset();
-                SetttingForm Setting = new SetttingForm();
-                Configuration Config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
+                var setting = new SettingForm();
+                var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
                 if (File.Exists("setting.xml"))
                     File.Delete("setting.xml");
-                if (File.Exists(Config.FilePath))
-                    File.Delete(Config.FilePath);
-                Setting.Show();
+                if (File.Exists(config.FilePath))
+                    File.Delete(config.FilePath);
+                setting.Show();
                 Close();
             }
         }
