@@ -106,18 +106,19 @@ namespace S_net_Viewer
         /// <summary>
         /// 画像を取得します。
         /// </summary>
-        public async void GetImg()
+        public async void GetImg()//todo:自動取得遅延設定
         {
             try
             {
                 var nowTime = DateTime.Now;
                 var nowTimeUniv = nowTime.ToUniversalTime();
                 var dataTime = nowTimeUniv - TimeSpan.FromSeconds(nowTimeUniv.Second);
-                if (nowTime.Second < Settings.Default.GetDelay - 1)//遅延秒より秒が短い
+                if (nowTime.Second < Settings.Default.GetDelay % 60 - 1)//遅延秒より秒が短い
                     dataTime -= TimeSpan.FromMinutes(1);
+                dataTime -= TimeSpan.FromMinutes(Settings.Default.GetDelay / 60);
                 var time = dataTime.ToString("yyyyMMddHHmm") + "00";
-                var kyoshinURL1 = $"https://www.msil.go.jp/tiles/smoni/" + time + "/" + time + "/5/28/11.png";
-                var kyoshinURL2 = $"https://www.msil.go.jp/tiles/smoni/" + time + "/" + time + "/5/28/12.png";
+                var kyoshinURL1 = "https://www.msil.go.jp/data/tiles/smoni/tileimage/" + time + "/" + time + "/5/28/11.png";
+                var kyoshinURL2 = "https://www.msil.go.jp/data/tiles/smoni/tileimage/" + time + "/" + time + "/5/28/12.png";
 
                 var mainImg_normal = new Bitmap(180, 320);
                 using var g = Graphics.FromImage(mainImg_normal);

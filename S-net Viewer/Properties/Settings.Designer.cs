@@ -85,18 +85,6 @@ namespace S_net_Viewer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("15")]
-        public int GetDelay {
-            get {
-                return ((int)(this["GetDelay"]));
-            }
-            set {
-                this["GetDelay"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool ReplaceColor {
             get {
@@ -140,6 +128,18 @@ namespace S_net_Viewer.Properties {
             }
             set {
                 this["ReplaceColors"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("90")]
+        public int GetDelay {
+            get {
+                return ((int)(this["GetDelay"]));
+            }
+            set {
+                this["GetDelay"] = value;
             }
         }
     }

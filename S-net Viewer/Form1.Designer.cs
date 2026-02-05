@@ -80,7 +80,7 @@
             // 
             RC.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { RC_setting, RC_SaveSize, RC_Sites, RC_reboot });
             RC.Name = "RC";
-            RC.Size = new System.Drawing.Size(189, 92);
+            RC.Size = new System.Drawing.Size(189, 114);
             // 
             // RC_setting
             // 
@@ -101,31 +101,31 @@
             RC_Sites.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { RC_UmisiruMap, RCbar, RC_Twitter, RC_GitHub });
             RC_Sites.Name = "RC_Sites";
             RC_Sites.Size = new System.Drawing.Size(188, 22);
-            RC_Sites.Text = "各種サイト";
+            RC_Sites.Text = "各種ページ";
             // 
             // RC_UmisiruMap
             // 
             RC_UmisiruMap.Name = "RC_UmisiruMap";
-            RC_UmisiruMap.Size = new System.Drawing.Size(157, 22);
+            RC_UmisiruMap.Size = new System.Drawing.Size(180, 22);
             RC_UmisiruMap.Text = "海しるマップ";
             RC_UmisiruMap.Click += RC_UmisiruMap_Click;
             // 
             // RCbar
             // 
             RCbar.Name = "RCbar";
-            RCbar.Size = new System.Drawing.Size(154, 6);
+            RCbar.Size = new System.Drawing.Size(177, 6);
             // 
             // RC_Twitter
             // 
             RC_Twitter.Name = "RC_Twitter";
-            RC_Twitter.Size = new System.Drawing.Size(157, 22);
+            RC_Twitter.Size = new System.Drawing.Size(180, 22);
             RC_Twitter.Text = "製作者Twitter";
             RC_Twitter.Click += RC_Twitter_Click;
             // 
             // RC_GitHub
             // 
             RC_GitHub.Name = "RC_GitHub";
-            RC_GitHub.Size = new System.Drawing.Size(157, 22);
+            RC_GitHub.Size = new System.Drawing.Size(180, 22);
             RC_GitHub.Text = "GitHubレポジトリ";
             RC_GitHub.Click += RC_GitHub_Click;
             // 

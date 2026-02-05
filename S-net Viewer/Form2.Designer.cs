@@ -118,7 +118,7 @@
             Delay.Name = "Delay";
             Delay.Size = new System.Drawing.Size(48, 21);
             Delay.TabIndex = 9;
-            Delay.Value = new decimal(new int[] { 15, 0, 0, 0 });
+            Delay.Value = new decimal(new int[] { 90, 0, 0, 0 });
             // 
             // DisplayTime
             // 
